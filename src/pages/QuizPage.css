@@ -1,0 +1,33 @@
+.thequiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.quiz-timer {
+  text-align: center;
+}
+
+.quiz-img {
+  width: 640px;
+  height: 320px;
+}
+
+.quiz-question {
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.quiz-answers {
+  list-style-type: none;
+}
+
+.quiz-answers li {
+  display: inline-block;
+  border-radius: 5px;
+  background: lightgreen;
+  border: 1px solid green;
+  padding: 20px;
+}
