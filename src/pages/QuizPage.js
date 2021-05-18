@@ -1,4 +1,5 @@
 import TheQuiz from "../components/TheQuiz";
+import "./QuizPage.css";
 
 export default function QuizPage() {
   function onClickAnswer(answerId) {
@@ -7,9 +8,7 @@ export default function QuizPage() {
 
   return (
     <div className="quiz-container">
-      <div className="quiz-timer">
-        <h1>30 seconds</h1>
-      </div>
+      <h1 className="quiz-timer">30 seconds</h1>
       <div className="quiz">
         <TheQuiz clickHandler={onClickAnswer} />
       </div>

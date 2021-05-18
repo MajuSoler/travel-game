@@ -1,5 +1,4 @@
 import React from "react";
-import "./TheQuiz.css";
 
 export default function TheQuiz(props) {
   return (
