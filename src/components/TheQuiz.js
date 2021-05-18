@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function TheQuiz(props) {
+export default function TheQuiz({ data }, props) {
+  console.log(data);
   return (
     <div className="thequiz-container">
       <div>
@@ -10,7 +11,7 @@ export default function TheQuiz(props) {
           className="quiz-img"
         />
       </div>
-      <div className="quiz-question">This is very difficult question?</div>
+      <div className="quiz-question">This is a very difficult question?</div>
       <div>
         <ul className="quiz-answers">
           <li onClick={() => props.clickHandler("1")}>Answer 1</li>
