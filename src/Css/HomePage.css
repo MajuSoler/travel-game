@@ -1,0 +1,12 @@
+.invisibleButton {
+  background-color: white;
+  border: 0ch;
+  width: 200px;
+  height: 30px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.invisibleButton:hover {
+  background-color: Red;
+}
