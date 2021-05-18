@@ -1,23 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
-export default function TheQuiz({ data }, props) {
-  console.log(data);
+export default function TheQuiz({ data }) {
+  const [questionTurn, set_questionTurn] = useState(0);
+  const [score, set_score] = useState(0);
+  const history = useHistory();
+
+  function onClickAnswer(answerId) {
+    if (answerId === data[questionTurn].correct_answer) {
+      console.log(`You guessed correctly! Your score so far is: ${score}`);
+      set_score(score + 10);
+    } else {
+      console.log(`Wrong answer! Your score so far is: ${score}`);
+      set_score(score - 5);
+    }
+    if (questionTurn === data.length - 1) {
+      history.push("/end-quiz");
+    } else {
+      set_questionTurn(questionTurn + 1);
+    }
+  }
+
   return (
     <div className="thequiz-container">
       <div>
-        <img
-          src="https://source.unsplash.com/1600x900/?"
-          alt="quiz"
-          className="quiz-img"
-        />
+        <img src={data[questionTurn].img_url} alt="quiz" className="quiz-img" />
       </div>
-      <div className="quiz-question">This is a very difficult question?</div>
+      <div className="quiz-question">{data[questionTurn].question}</div>
       <div>
         <ul className="quiz-answers">
-          <li onClick={() => props.clickHandler("1")}>Answer 1</li>
-          <li onClick={() => props.clickHandler("2")}>Answer 2</li>
-          <li onClick={() => props.clickHandler("3")}>Answer 3</li>
-          <li onClick={() => props.clickHandler("4")}>Answer 4</li>
+          <li onClick={() => onClickAnswer(1)}>
+            {data[questionTurn].answer_1}
+          </li>
+          <li onClick={() => onClickAnswer(2)}>
+            {data[questionTurn].answer_2}
+          </li>
+          <li onClick={() => onClickAnswer(3)}>
+            {data[questionTurn].answer_3}
+          </li>
+          <li onClick={() => onClickAnswer(4)}>
+            {data[questionTurn].answer_4}
+          </li>
         </ul>
       </div>
     </div>

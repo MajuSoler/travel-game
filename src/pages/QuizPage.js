@@ -4,10 +4,6 @@ import QuizTimer from "../components/QuizTimer";
 import "./QuizPage.css";
 
 export default function QuizPage() {
-  function onClickAnswer(answerId) {
-    console.log(`You clicked on answer ${answerId}`);
-  }
-
   const questions = GetQuestions();
 
   return (
@@ -15,8 +11,10 @@ export default function QuizPage() {
       <QuizTimer />
       <div className="quiz">
         {questions !== undefined && questions.length !== 0 ? (
-          <TheQuiz clickHandler={onClickAnswer} data={questions} />
-        ) : null}
+          <TheQuiz data={questions} />
+        ) : (
+          <span>Loadin...</span>
+        )}
       </div>
     </div>
   );
