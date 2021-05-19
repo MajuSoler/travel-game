@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchHighscores } from "../store/highscores/actions";
 import { selectAllHighscores } from "../store/highscores/selectors";
 
-import { fetchQuestions, newQuestion } from "../store/questions/actions";
+import { fetchQuestions } from "../store/questions/actions";
 import { selectAllQuestions } from "../store/questions/selectors";
 
 export default function TestPage() {

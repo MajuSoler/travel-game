@@ -49,6 +49,16 @@ export const newQuestion = (
       console.log("response.data", response.data);
     } catch (error) {
       if (error.response) {
+        console.log(
+          "error,",
+          answer_1,
+          answer_2,
+          answer_3,
+          answer_4,
+          correct_answer,
+          question,
+          img_url
+        );
         console.log(error.response.data.message);
       } else {
         console.log(error.message);
