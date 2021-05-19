@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setScore } from "../store/gameState/actions";
+import { selectScore } from "../store/gameState/selectors";
 
 export default function TheQuiz({ data }) {
   const [questionTurn, set_questionTurn] = useState(0);
   const history = useHistory();
   const dispatch = useDispatch();
+  const score = useSelector(selectScore);
 
   function onClickAnswer(answerId) {
     if (answerId === data[questionTurn].correct_answer) {
-      dispatch(setScore(10));
+      dispatch(setScore(score + 10));
     } else {
-      dispatch(setScore(-5));
+      dispatch(setScore(score - 5));
     }
     if (questionTurn === data.length - 1) {
       history.push("/end-quiz");

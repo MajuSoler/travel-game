@@ -18,6 +18,7 @@ export default function QuizTimer() {
 
   useEffect(() => {
     onClickStart();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -34,7 +35,7 @@ export default function QuizTimer() {
 
   return (
     <div className="quiz-timer">
-      <p>{gameTime} seconds</p>
+      <h2>{gameTime} seconds</h2>
     </div>
   );
 }
