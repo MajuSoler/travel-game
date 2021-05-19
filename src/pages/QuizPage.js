@@ -1,17 +1,24 @@
+import GetQuestions from "../components/GetQuestions";
 import TheQuiz from "../components/TheQuiz";
 import QuizTimer from "../components/QuizTimer";
+import QuizScore from "../components/QuizScore";
 import "./QuizPage.css";
 
 export default function QuizPage() {
-  function onClickAnswer(answerId) {
-    console.log(`You clicked on answer ${answerId}`);
-  }
+  const questions = GetQuestions();
 
   return (
     <div className="quiz-container">
-      <QuizTimer />
+      <div className="quiz-controls">
+        <QuizTimer />
+        <QuizScore />
+      </div>
       <div className="quiz">
-        <TheQuiz clickHandler={onClickAnswer} />
+        {questions !== undefined && questions.length !== 0 ? (
+          <TheQuiz data={questions} />
+        ) : (
+          <span>Loadin...</span>
+        )}
       </div>
     </div>
   );

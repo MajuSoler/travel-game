@@ -1,19 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setScore } from "../store/gameState/actions";
 
 export default function QuizTimer() {
   const [gameTime, set_gameTime] = useState(0);
   const [startGame, set_startGame] = useState(false);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   function onClickStart() {
     set_gameTime(30);
     set_startGame(true);
-    console.log("Clicked to start game");
+    dispatch(setScore(0));
+    console.log("Game started!");
   }
 
   useEffect(() => {
-    if (gameTime > 0) {
+    onClickStart();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (gameTime > 0 && startGame) {
       setTimeout(() => {
         set_gameTime(gameTime - 1);
       }, 1000);
@@ -26,8 +35,7 @@ export default function QuizTimer() {
 
   return (
     <div className="quiz-timer">
-      <p>{gameTime} seconds</p>
-      <button onClick={onClickStart}>Start Game</button>
+      <h2>{gameTime} seconds</h2>
     </div>
   );
 }
