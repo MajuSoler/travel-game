@@ -13,7 +13,7 @@ export default function QuizTimer() {
   }
 
   useEffect(() => {
-    if (gameTime > 0) {
+    if (gameTime > 0 && startGame) {
       setTimeout(() => {
         set_gameTime(gameTime - 1);
       }, 1000);
