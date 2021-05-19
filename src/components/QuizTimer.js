@@ -9,8 +9,12 @@ export default function QuizTimer() {
   function onClickStart() {
     set_gameTime(30);
     set_startGame(true);
-    console.log("Clicked to start game");
+    console.log("Game started!");
   }
+
+  useEffect(() => {
+    onClickStart();
+  }, []);
 
   useEffect(() => {
     if (gameTime > 0 && startGame) {
@@ -27,7 +31,6 @@ export default function QuizTimer() {
   return (
     <div className="quiz-timer">
       <p>{gameTime} seconds</p>
-      <button onClick={onClickStart}>Start Game</button>
     </div>
   );
 }
