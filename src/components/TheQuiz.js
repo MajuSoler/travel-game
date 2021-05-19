@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setScore } from "../store/gameState/actions";
 
 export default function TheQuiz({ data }) {
   const [questionTurn, set_questionTurn] = useState(0);
-  const [score, set_score] = useState(0);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   function onClickAnswer(answerId) {
     if (answerId === data[questionTurn].correct_answer) {
-      console.log(`You guessed correctly! Your score so far is: ${score}`);
-      set_score(score + 10);
+      dispatch(setScore(10));
     } else {
-      console.log(`Wrong answer! Your score so far is: ${score}`);
-      set_score(score - 5);
+      dispatch(setScore(-5));
     }
     if (questionTurn === data.length - 1) {
       history.push("/end-quiz");

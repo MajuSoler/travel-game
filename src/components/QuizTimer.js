@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setScore } from "../store/gameState/actions";
 
 export default function QuizTimer() {
   const [gameTime, set_gameTime] = useState(0);
   const [startGame, set_startGame] = useState(false);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   function onClickStart() {
     set_gameTime(30);
     set_startGame(true);
+    dispatch(setScore(0));
     console.log("Game started!");
   }
 
