@@ -10,7 +10,9 @@ export default function EndQuizPage() {
   const [player_name, set_player_name] = useState("");
 
   function nameChangeHandler(event) {
-    set_player_name(event.target.value);
+    if (player_name.length < 3) {
+      set_player_name(event.target.value);
+    }
   }
 
   function submitScore() {
