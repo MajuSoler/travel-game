@@ -39,3 +39,8 @@
   align-items: center;
   align-content: center;
 }
+
+.quiz-playerInput {
+  padding: 12px 20px;
+  text-align: center;
+}
