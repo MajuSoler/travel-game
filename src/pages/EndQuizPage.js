@@ -1,13 +1,22 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectScore } from "../store/gameState/selectors";
+import { newHighscore } from "../store/highscores/actions";
+import { setScore } from "../store/gameState/actions";
 
 export default function EndQuizPage() {
+  const dispatch = useDispatch();
   const score = useSelector(selectScore);
-  const [playerName, set_playerName] = useState("");
+  const [player_name, set_player_name] = useState("");
 
   function nameChangeHandler(event) {
-    set_playerName(event.target.value);
+    set_player_name(event.target.value);
+  }
+
+  function submitScore() {
+    dispatch(newHighscore(player_name, score));
+    set_player_name("");
+    dispatch(setScore(0));
   }
 
   return (
@@ -19,10 +28,10 @@ export default function EndQuizPage() {
         className="quiz-playerInput"
         type="text"
         placeholder="Your name..."
-        value={playerName}
+        value={player_name}
         onChange={(event) => nameChangeHandler(event)}
       />
-      <button>Submit</button>
+      <button onClick={submitScore}>Submit</button>
     </div>
   );
 }
