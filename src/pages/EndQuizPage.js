@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectScore } from "../store/gameState/selectors";
 import { newHighscore } from "../store/highscores/actions";
 import { setScore } from "../store/gameState/actions";
+import { useHistory } from "react-router-dom";
 
 export default function EndQuizPage() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const score = useSelector(selectScore);
   const [player_name, set_player_name] = useState("");
 
@@ -19,6 +21,7 @@ export default function EndQuizPage() {
     dispatch(newHighscore(player_name, score));
     set_player_name("");
     dispatch(setScore(0));
+    history.push("/");
   }
 
   return (
