@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, PureComponent } from "react";
 import { useDispatch } from "react-redux";
-import "../App.css";
+
 import { newQuestion } from "../store/questions/actions";
+
+import "../Css/AddQuestionPage.css";
 
 export default function AddQuestionPage() {
   const dispatch = useDispatch();
@@ -13,25 +15,33 @@ export default function AddQuestionPage() {
   const [textOptionD, setTextOptionD] = useState("");
   const [state, setState] = useState(true);
 
-  const [optionA, setOptionA] = useState(false);
-  const [optionB, setOptionB] = useState(false);
-  const [optionC, setOptionC] = useState(false);
-  const [optionD, setOptionD] = useState(false);
-
   const [correctAnswer, setCorrectAnswer] = useState("");
 
-  useEffect(() => {
-    if (optionA === true) {
-      setCorrectAnswer(1);
-    } else if (optionB === true) {
-      setCorrectAnswer(2);
-    } else if (optionC === true) {
-      setCorrectAnswer(3);
-    } else if (optionD === true) {
-      setCorrectAnswer(4);
-    }
-  }, [optionA, optionB, optionC, optionD]);
+  const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    if (
+      image !== "" &&
+      question !== "" &&
+      textOptionA !== "" &&
+      textOptionB !== "" &&
+      textOptionC !== "" &&
+      textOptionD !== "" &&
+      correctAnswer !== ""
+    ) {
+      setShow(true);
+    }
+  }, [
+    image,
+    question,
+    textOptionA,
+    textOptionB,
+    textOptionC,
+    textOptionD,
+    correctAnswer,
+  ]);
+
+  console.log(correctAnswer);
   function inputNewQuestion() {
     dispatch(
       newQuestion(
@@ -52,78 +62,105 @@ export default function AddQuestionPage() {
   };
 
   return (
-    <div>
+    <div className="QuestionPage">
+      <div className="containerForFutureImage">
+        {image ? (
+          <div className="prviewImage">
+            <img src={image} alt="quiz" className="quiz-img" />
+          </div>
+        ) : (
+          <div className="contentBox"> Image preview</div>
+        )}
+      </div>
       {state ? (
-        <div className="App">
+        <div className="testin">
           <div>
-            <input
-              className="inputFields"
-              type="text"
-              onChange={(e) => setImage(e.target.value)}
-              placeholder="Put the URL of the image"
-            />
+            <div>
+              <input
+                className="inputFields"
+                type="text"
+                onChange={(e) => setImage(e.target.value)}
+                placeholder="Put the URL of the image"
+              />
+            </div>
+            <div>
+              <input
+                className="inputFields"
+                type="text"
+                onChange={(e) => setQuestion(e.target.value)}
+                placeholder="Put the question here"
+              />
+            </div>
+            <div>
+              <input
+                className="inputFields"
+                type="text"
+                onChange={(e) => setTextOptionA(e.target.value)}
+                placeholder="Put option A here"
+              />
+            </div>
+
+            <div>
+              <input
+                className="inputFields"
+                type="text"
+                onChange={(e) => setTextOptionB(e.target.value)}
+                placeholder="Put option B here"
+              />
+            </div>
+            <div>
+              <input
+                className="inputFields"
+                type="text"
+                onChange={(e) => setTextOptionC(e.target.value)}
+                placeholder="Put option C here"
+              />
+            </div>
+            <div>
+              <input
+                className="inputFields"
+                type="text"
+                onChange={(e) => setTextOptionD(e.target.value)}
+                placeholder="Put option D here"
+              />
+            </div>
           </div>
-          <div>
-            <input
-              className="inputFields"
-              type="text"
-              onChange={(e) => setQuestion(e.target.value)}
-              placeholder="Put the question here"
-            />
+          <div
+            type="radio"
+            name="answer"
+            className="radioselector"
+            onChange={(event) => setCorrectAnswer(event.target.value)}
+          >
+            <div className="testing-a">
+              <label>Correct answer: </label>
+            </div>
+            <div className="testing">
+              <input type="radio" value="1" name="answer"></input>
+              <label className="option">Option A</label>{" "}
+            </div>
+            <div className="testing">
+              <input type="radio" value="2" name="answer"></input>
+              <label className="option">Option B</label>{" "}
+            </div>
+            <div className="testing">
+              <input type="radio" value="3" name="answer"></input>
+              <label className="option">Option C</label>{" "}
+            </div>
+            <div className="testing">
+              <input type="radio" value="4" name="answer"></input>
+              <label className="option">Option D</label>{" "}
+            </div>
           </div>
-          <div>
-            <input
-              className="inputFields"
-              type="text"
-              onChange={(e) => setTextOptionA(e.target.value)}
-              placeholder="Put option A here"
-            />
-            <input
-              type="checkbox"
-              onChange={(e) => setOptionA(e.target.checked)}
-            />
-          </div>
-          <div>
-            <input
-              className="inputFields"
-              type="text"
-              onChange={(e) => setTextOptionB(e.target.value)}
-              placeholder="Put option B here"
-            />
-            <input
-              type="checkbox"
-              onChange={(e) => setOptionB(e.target.checked)}
-            />
-          </div>
-          <div>
-            <input
-              className="inputFields"
-              type="text"
-              onChange={(e) => setTextOptionC(e.target.value)}
-              placeholder="Put option C here"
-            />
-            <input
-              type="checkbox"
-              onChange={(e) => setOptionC(e.target.checked)}
-            />
-          </div>
-          <div>
-            <input
-              className="inputFields"
-              type="text"
-              onChange={(e) => setTextOptionD(e.target.value)}
-              placeholder="Put option D here"
-            />
-            <input
-              type="checkbox"
-              onChange={(e) => setOptionD(e.target.checked)}
-            />
-          </div>
-          <div>
-            <button onClick={() => inputNewQuestion()}>
-              Send New Question
-            </button>
-          </div>
+
+          {show ? (
+            <div>
+              <button onClick={() => inputNewQuestion()}>
+                Send New Question
+              </button>
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
       ) : (
         <div>
@@ -131,6 +168,15 @@ export default function AddQuestionPage() {
           <button onClick={refreshPage}> Add another question!</button>
         </div>
       )}
+      {/* <div>
+        {image ? (
+          <div>
+            <img src={image} alt="quiz" className="quiz-img" />
+          </div>
+        ) : (
+          <div className="foda">Preview of the image</div>
+        )}
+      </div> */}
     </div>
   );
 }

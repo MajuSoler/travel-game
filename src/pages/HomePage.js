@@ -20,26 +20,28 @@ export default function HomePage() {
   }, [highscore]);
 
   return (
-    <div className="App">
-      <div>
-        <h1>World Quiz!</h1>
-      </div>
-      <div>
-        <h1>Top 5 Players!</h1>
-      </div>
-      <Link to="/highscores">
+    <div>
+      <div className="App">
         <div>
-          <button>Show all Scores!!</button>
+          <h1>World Quiz!</h1>
         </div>
-      </Link>
-      <div>
-        {highscores.slice(0, 5).map((score, index) => (
-          <ul key={index}>
-            <li>
-              {score.player_name} - {score.score}
-            </li>
-          </ul>
-        ))}
+        <div>
+          <h1>Top 5 Players!</h1>
+        </div>
+        <Link to="/highscores">
+          <div>
+            <button>Show all Scores!!</button>
+          </div>
+        </Link>
+        <div>
+          {highscores.slice(0, 5).map((score, index) => (
+            <ul key={index}>
+              <li>
+                {score.player_name} - {score.score}
+              </li>
+            </ul>
+          ))}
+        </div>
       </div>
       <div>
         <Link to="/question">
