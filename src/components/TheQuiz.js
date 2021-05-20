@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setScore } from "../store/gameState/actions";
 import { selectScore } from "../store/gameState/selectors";
+import correctAnswerSound from "../assets/audio/success.wav";
+import wrongAnswerSound from "../assets/audio/wrong.wav";
 
 export default function TheQuiz({ data }) {
   const [questionTurn, set_questionTurn] = useState(0);
@@ -10,10 +12,18 @@ export default function TheQuiz({ data }) {
   const dispatch = useDispatch();
   const score = useSelector(selectScore);
 
+  function answerAudioFeedback(answerStatus) {
+    answerStatus
+      ? new Audio(correctAnswerSound).play()
+      : new Audio(wrongAnswerSound).play();
+  }
+
   function onClickAnswer(answerId) {
     if (answerId === data[questionTurn].correct_answer) {
+      answerAudioFeedback(true);
       dispatch(setScore(score + 10));
     } else {
+      answerAudioFeedback(false);
       dispatch(setScore(score - 5));
     }
     if (questionTurn === data.length - 1) {
