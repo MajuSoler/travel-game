@@ -6,7 +6,7 @@ export const setScore = (score) => ({
   payload: score,
 });
 
-export const toggleMusic = (music) => ({
+export const toggleMusic = (toggle) => ({
   type: TOGGLE,
-  payload: music,
+  payload: toggle,
 });
