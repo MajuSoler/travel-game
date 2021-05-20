@@ -14,7 +14,7 @@ import NavBar from "./components/NavBar";
 function App() {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
 
       <Switch>
         <Route path="/highscores" component={HighscoresPage} />

@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&family=Yellowtail&display=swap");
+
+.thequiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* position: absolute; */
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background: repeating-linear-gradient(
+      pink 2px,
+      transparent 3px,
+      transparent 30px
+    ),
+    repeating-linear-gradient(
+        90deg,
+        pink 2px,
+        transparent 3px,
+        transparent 40px
+      )
+      10px 0;
+  filter: drop-shadow(0 0 1px magenta) drop-shadow(0 0 3px magenta)
+    drop-shadow(0 0 7px cyan);
+  animation: move 10s linear infinite;
+}
+
+.quiz-container {
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* align-content: center; */
+}
+
+.quiz-timer {
+  /* text-align: center; */
+  display: inline-block;
+  font-family: "Russo One", sans-serif;
+  font-size: 0.5em;
+  margin-left: 10px;
+}
+
+.quiz-score {
+  font-family: "Russo One", sans-serif;
+  font-size: 0.5em;
+  margin-left: 10px;
+}
+
+.quiz-img {
+  width: 640px;
+  height: 320px;
+}
+
+.quiz-question {
+  padding: 20px;
+  text-transform: uppercase;
+  font-family: "Russo One", sans-serif;
+  font-size: 1.5em;
+}
+
+.quiz-answers {
+  list-style-type: none;
+}
+
+.quiz-answers li {
+  display: inline-block;
+  border-radius: 5px;
+  background: purple;
+  border: 2px solid black;
+  padding: 20px;
+  font-size: 1em;
+  margin: 3px;
+  font-family: "Russo One", sans-serif;
+}
+
+.quiz {
+  display: flex;
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.quiz-playerInput {
+  padding: 12px 20px;
+  text-align: center;
+}

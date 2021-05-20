@@ -1,14 +1,171 @@
-.invisibleButton {
-  background-color: white;
-  border: 0ch;
-  width: 300px;
-  height: 100px;
-  margin-top: 250px;
-  margin-left: 500px;
-  /* padding: 5px; */
-  /* margin-left: 0px; */
+/* .App {
+  text-align: center;
+  background-color: #d99056;
+  overflow: hidden;
+  border: 0px;
+}
+.p {
+  color: white;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&family=Yellowtail&display=swap");
+:root {
+  --navy: #0c0c4a;
+  --dark-navy: #060726;
+  --pink: rgba(213, 84, 213, 1);
+  --pink2: rgba(213, 84, 213, 0.7);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+*::before,
+::after {
+  content: "";
+  position: absolute;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  /* display: grid; */
+  /* place-items: center; */
+  filter: saturate(130%) contrast(125%);
 }
 
-.invisibleButton:hover {
-  background-color: white;
+#sky {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background: repeating-linear-gradient(
+      pink 2px,
+      transparent 3px,
+      transparent 30px
+    ),
+    repeating-linear-gradient(
+        90deg,
+        pink 2px,
+        transparent 3px,
+        transparent 40px
+      )
+      10px 0;
+  filter: drop-shadow(0 0 1px magenta) drop-shadow(0 0 3px magenta)
+    drop-shadow(0 0 7px cyan);
+  animation: move 10s linear infinite;
+  opacity: 0.2;
+}
+#bottom {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  transform: perspective(500px) rotateX(65deg);
+  bottom: -15%;
+  background: linear-gradient(
+    90deg,
+    hotpink -60%,
+    transparent 40%,
+    transparent 60%,
+    hotpink 140%
+  );
+  clip-path: polygon(0 100%, 0 55%, 100% 55%, 100% 100%);
+}
+
+#ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 55%;
+  background: repeating-linear-gradient(
+      white 2px,
+      transparent 3px,
+      transparent 30px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      white 2px,
+      transparent 3px,
+      transparent 40px
+    );
+  filter: drop-shadow(0 0 1px cyan) drop-shadow(0 0 3px cyan)
+    drop-shadow(0 0 7px cyan);
+  animation: move 10s linear infinite;
+}
+
+#text {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+}
+h1 {
+  color: white;
+  font-family: "Russo One", sans-serif;
+  text-transform: uppercase;
+  font-size: 5em;
+  transform: translatey(25px);
+  background: linear-gradient(
+    cornflowerblue 30%,
+    white,
+    darkmagenta 60%,
+    cornflowerblue 100%
+  );
+  background-size: contain;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px silver;
+  filter: drop-shadow(5px 5px 1px black) drop-shadow(1px 1px 1px magenta);
+  animation: bg-shift 0.5s ease-in-out infinite alternate;
+}
+h2 {
+  color: white;
+  font-family: "Yellowtail", cursive;
+
+  font-weight: 100;
+  font-size: 4em;
+  transform: translatey(-10px) rotatez(-5deg);
+  text-shadow: 0 0 3px magenta, 0 0 7px magenta, 0 0 15px black, 0 0 15px black;
+  animation: hover 1s ease-in-out infinite;
+}
+@keyframes move {
+  to {
+    background-position-y: 2000px;
+  }
+}
+@keyframes bg-shift {
+  0% {
+    background-position: 0 -25px;
+  }
+  100% {
+    background-position: 0 25px;
+  }
+}
+
+@keyframes hover {
+  0% {
+    transform: translatey(-10px) rotatez(-5deg) perspective(200px) translatez(0);
+  }
+  50% {
+    transform: translatey(-10px) rotatez(-5deg) perspective(200px)
+      translatez(50px);
+  }
+  100% {
+    transform: translatey(-10px) rotatez(-5deg) perspective(200px) translatez(0);
+  }
+}
+
+.invisibleButton {
+  background-color: purple;
+
+  border: 0ch;
+  width: 3px;
+  height: 10px;
+  margin-top: 250px;
+  margin-left: 6000px;
 }
