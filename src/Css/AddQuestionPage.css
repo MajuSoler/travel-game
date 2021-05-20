@@ -1,18 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&family=Yellowtail&display=swap");
+
 .radioselector {
-  /* background-color: yellow; */
-  /* display: flex; */
   padding: 10px;
   margin: 10px;
-  /* height: auto; */
-  /* width: auto; */
-  /* flex-direction: column; */
 }
 
 .QuestionPage {
-  /* display: flex; */
-  /* display: block; */
   text-align: center;
-  /* background-color: turquoise; */
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background: repeating-linear-gradient(
+      pink 2px,
+      transparent 3px,
+      transparent 30px
+    ),
+    repeating-linear-gradient(
+        90deg,
+        pink 2px,
+        transparent 3px,
+        transparent 40px
+      )
+      10px 0;
+  filter: drop-shadow(0 0 1px magenta) drop-shadow(0 0 3px magenta)
+    drop-shadow(0 0 7px cyan);
+  animation: move 10s linear infinite;
   align-items: center;
   align-content: center;
 
@@ -42,11 +55,20 @@
   height: 320px;
   justify-content: center;
   align-items: center;
-  /* background-color: tomato; */
-  /* align-content: center; */
 }
 
+.inputFields {
+  background-color: #dda0dd;
+  display: inline-block;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid black;
+  padding: 15px;
+  font-size: 1em;
+  font-family: "Russo One", sans-serif;
+}
 .prviewImage {
+  margin-top: 12px;
   border: solid black 2px;
   width: 640px;
   height: 320px;
@@ -55,8 +77,26 @@
   align-items: center;
 }
 
+.New-question-Button {
+  border-radius: 5px;
+  background: purple;
+  border: 2px solid black;
+  padding: 20px;
+  font-size: 1em;
+  margin: 3px;
+  font-family: "Russo One", sans-serif;
+  margin: 16px;
+}
+
+.sucess-message {
+  padding: 20px;
+  font-size: 1em;
+  margin: 3px;
+  font-family: "Russo One", sans-serif;
+  margin: 16px;
+}
+
 .testing {
-  /* background-color: tomato; */
   padding: 10px;
   display: flex;
   align-items: center;
@@ -64,33 +104,19 @@
   height: 25px;
 }
 
-.testing-a {
-  /* background-color: black; */
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  margin-top: 50px;
-  height: 25px;
-}
-
 .option {
-  /* background-color: gray; */
   display: flex;
-  /* flex-wrap: wrap;    */
   padding: 10px;
-  /* margin: 5px; */
   width: 100px;
+  color: "red";
+  font-family: "Russo One", sans-serif;
+  font-size: 1em;
+  margin-left: 10px;
 }
 
 .inputFields {
-  /* background-color: purple; */
-  /* display: flex; */
   padding: 10px;
   margin: 5px;
   width: 200px;
   height: 25px;
-  /* flex-direction: column-reverse; */
-  /* justify-content: space-between; */
-  /* position: relative; */
-  /* float: left; */
 }

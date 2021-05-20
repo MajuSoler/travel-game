@@ -1,13 +1,3 @@
-/* .App {
-  text-align: center;
-  background-color: #d99056;
-  overflow: hidden;
-  border: 0px;
-}
-.p {
-  color: white;
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&family=Yellowtail&display=swap");
 :root {
   --navy: #0c0c4a;
@@ -161,11 +151,11 @@ h2 {
 }
 
 .invisibleButton {
-  background-color: purple;
+  background-color: black;
 
   border: 0ch;
-  width: 3px;
-  height: 10px;
+  width: 300px;
+  height: 100px;
   margin-top: 250px;
   margin-left: 6000px;
 }

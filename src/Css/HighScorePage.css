@@ -37,13 +37,20 @@
   place-items: center;
   justify-content: center;
 }
+.scrolling {
+  overflow: scroll;
+}
 
+.Title {
+  margin-top: 50px;
+}
 .high-scores {
   color: transparent;
   font-family: "Russo One", sans-serif;
   text-transform: uppercase;
   font-size: 3em;
   transform: translatey(25px);
+  overflow: scroll;
   background: linear-gradient(
     cornflowerblue 30%,
     white,
@@ -74,14 +81,6 @@
 .quiz-answers {
   list-style-type: none;
 }
-
-/* .quiz-answers li {
-  display: inline-block;
-  border-radius: 5px;
-  background: purple;
-  border: 1px solid black;
-  padding: 20px;
-} */
 
 .quiz-controls {
   display: flex;
