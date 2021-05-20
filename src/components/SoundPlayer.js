@@ -18,11 +18,7 @@ export default function SoundPlayer(status) {
       break;
     }
     case "HOMEPAGE": {
-      const music = new Audio(homePage);
-      if (!music.ended) {
-        music.play();
-      }
-      // music.addEventListener("play", () => music.pause());
+      new Audio(homePage).play();
       break;
     }
     default: {
