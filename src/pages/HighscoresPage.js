@@ -21,10 +21,9 @@ export default function HighscoresPage() {
 
       <div id="text">
         <Link to="/">
-          <h2>World Quiz!</h2>
+          <h2 className="Title">World Quiz!</h2>
         </Link>
-
-        <div>
+        <div className="scrolling">
           {highscores.map((score, index) => (
             <ul key={index}>
               <h1 className="high-scores">
