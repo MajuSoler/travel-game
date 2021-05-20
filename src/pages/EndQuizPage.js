@@ -5,6 +5,8 @@ import { newHighscore } from "../store/highscores/actions";
 import { setScore } from "../store/gameState/actions";
 import { useHistory } from "react-router-dom";
 
+import "../Css/EndQuizPage.css";
+
 export default function EndQuizPage() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -36,7 +38,7 @@ export default function EndQuizPage() {
         value={player_name}
         onChange={(event) => nameChangeHandler(event)}
       />
-      <button onClick={submitScore}>Submit</button>
+      <button className="Button-End-Quiz" onClick={submitScore}>Submit</button>
     </div>
   );
 }

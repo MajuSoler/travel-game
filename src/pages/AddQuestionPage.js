@@ -136,7 +136,7 @@ export default function AddQuestionPage() {
             </div>
             <div className="testing">
               <input type="radio" value="1" name="answer"></input>
-              <label className="option">Option A</label>{" "}
+              <h1 className="option">Option A</h1>
             </div>
             <div className="testing">
               <input type="radio" value="2" name="answer"></input>
@@ -168,15 +168,6 @@ export default function AddQuestionPage() {
           <button onClick={refreshPage}> Add another question!</button>
         </div>
       )}
-      {/* <div>
-        {image ? (
-          <div>
-            <img src={image} alt="quiz" className="quiz-img" />
-          </div>
-        ) : (
-          <div className="foda">Preview of the image</div>
-        )}
-      </div> */}
     </div>
   );
 }

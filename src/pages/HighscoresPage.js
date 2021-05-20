@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { selectAllHighscores } from "../store/highscores/selectors";
 import { fetchHighscores } from "../store/highscores/actions";
-import "../Css/HomePage.css";
-import "../App.css";
+import "../Css/HighScorePage.css";
 
 export default function HighscoresPage() {
   const dispatch = useDispatch();
@@ -17,19 +16,23 @@ export default function HighscoresPage() {
     setHighScores(highscore);
   }, [highscore]);
   return (
-    <div className="App">
-      <div>
-        <h1>World Quiz!</h1>
-      </div>
+    <div id="image">
+      <div id="sky"></div>
 
-      <div>
-        {highscores.map((score, index) => (
-          <ul key={index}>
-            <li>
-              {score.player_name} - {score.score}
-            </li>
-          </ul>
-        ))}
+      <div id="text">
+        <Link to="/">
+          <h2>World Quiz!</h2>
+        </Link>
+
+        <div>
+          {highscores.map((score, index) => (
+            <ul key={index}>
+              <h1 className="high-scores">
+                {score.player_name} - {score.score}
+              </h1>
+            </ul>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setScore } from "../store/gameState/actions";
+import "../Css/QuizPage.css";
+
 
 export default function QuizTimer() {
   const [gameTime, set_gameTime] = useState(0);
@@ -35,7 +37,7 @@ export default function QuizTimer() {
 
   return (
     <div className="quiz-timer">
-      <h2>{gameTime} seconds</h2>
+      <h1>{gameTime} seconds</h1>
     </div>
   );
 }
