@@ -41,56 +41,5 @@ export default function HomePage() {
         </div>
       </div>
     </div>
-    // <div>
-    //   <div id="image">
-    //     <div id="top">
-    //       <div id="sky">
-    //         <div>
-    //           <h1>World Quiz!</h1>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     <div id="bottom">
-    //       <div id="ground"></div>
-    //     </div>
-    //     <div id="text">
-    //       <h1>World Quiz!</h1>
-    //       <h1>Top 5 Players!</h1>
-    //     </div>
-    //   </div>
-    //   <div className="App">
-    //     <div>
-    //       <h1>World Quiz!</h1>
-    //     </div>
-    //     <Link to="/"></Link>
-    //     <Link to="/highscores">
-    //       <div>
-    //         <button>Show all Scores!!</button>
-    //       </div>
-    //     </Link>
-    //     <div>
-    //       {highscores.slice(0, 5).map((score, index) => (
-    //         <ul key={index}>
-    //           <p>
-    //             {score.player_name} - {score.score}
-    //           </p>
-    //         </ul>
-    //       ))}
-    //     </div>
-    //     <div>
-    //       <Link to="/quiz">
-    //         <div>
-    //           <button>Play Game!</button>
-    //         </div>
-    //       </Link>
-    //     </div>
-    //   </div>
-
-    //   <div>
-    //     <Link to="/question">
-    //       <button className="invisibleButton"></button>
-    //     </Link>
-    //   </div>
-    // </div>
   );
 }

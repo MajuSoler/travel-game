@@ -1,6 +1,6 @@
-import React, { useState, useEffect, PureComponent } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-
+import { Link } from "react-router-dom";
 import { newQuestion } from "../store/questions/actions";
 
 import "../Css/AddQuestionPage.css";
@@ -69,7 +69,7 @@ export default function AddQuestionPage() {
             <img src={image} alt="quiz" className="quiz-img" />
           </div>
         ) : (
-          <div className="contentBox"> Image preview</div>
+          <div className="contentBox"> </div>
         )}
       </div>
       {state ? (
@@ -80,7 +80,7 @@ export default function AddQuestionPage() {
                 className="inputFields"
                 type="text"
                 onChange={(e) => setImage(e.target.value)}
-                placeholder="Put the URL of the image"
+                placeholder="URL"
               />
             </div>
             <div>
@@ -88,7 +88,7 @@ export default function AddQuestionPage() {
                 className="inputFields"
                 type="text"
                 onChange={(e) => setQuestion(e.target.value)}
-                placeholder="Put the question here"
+                placeholder="Question"
               />
             </div>
             <div>
@@ -96,7 +96,7 @@ export default function AddQuestionPage() {
                 className="inputFields"
                 type="text"
                 onChange={(e) => setTextOptionA(e.target.value)}
-                placeholder="Put option A here"
+                placeholder="Option A"
               />
             </div>
 
@@ -105,7 +105,7 @@ export default function AddQuestionPage() {
                 className="inputFields"
                 type="text"
                 onChange={(e) => setTextOptionB(e.target.value)}
-                placeholder="Put option B here"
+                placeholder="Option B"
               />
             </div>
             <div>
@@ -113,7 +113,7 @@ export default function AddQuestionPage() {
                 className="inputFields"
                 type="text"
                 onChange={(e) => setTextOptionC(e.target.value)}
-                placeholder="Put option C here"
+                placeholder="Option C"
               />
             </div>
             <div>
@@ -121,7 +121,7 @@ export default function AddQuestionPage() {
                 className="inputFields"
                 type="text"
                 onChange={(e) => setTextOptionD(e.target.value)}
-                placeholder="Put option D here"
+                placeholder="Option D"
               />
             </div>
           </div>
@@ -131,12 +131,12 @@ export default function AddQuestionPage() {
             className="radioselector"
             onChange={(event) => setCorrectAnswer(event.target.value)}
           >
-            <div className="testing-a">
+            <div className="testing">
               <label>Correct answer: </label>
             </div>
             <div className="testing">
               <input type="radio" value="1" name="answer"></input>
-              <h1 className="option">Option A</h1>
+              <label className="option">Option A</label>
             </div>
             <div className="testing">
               <input type="radio" value="2" name="answer"></input>
@@ -154,7 +154,10 @@ export default function AddQuestionPage() {
 
           {show ? (
             <div>
-              <button onClick={() => inputNewQuestion()}>
+              <button
+                className="New-question-Button"
+                onClick={() => inputNewQuestion()}
+              >
                 Send New Question
               </button>
             </div>
@@ -164,8 +167,13 @@ export default function AddQuestionPage() {
         </div>
       ) : (
         <div>
-          <p>Your questin was sucessfully added!</p>
-          <button onClick={refreshPage}> Add another question!</button>
+          <p className="sucess-message">Your questin was sucessfully added!</p>
+          <button className="New-question-Button" onClick={refreshPage}>
+            Add another question!
+          </button>
+          <Link to="/">
+            <button className="New-question-Button">Go back to Home!</button>
+          </Link>
         </div>
       )}
     </div>
