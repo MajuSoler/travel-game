@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectScore } from "../store/gameState/selectors";
 import { newHighscore } from "../store/highscores/actions";
 import { setScore } from "../store/gameState/actions";
 import { useHistory } from "react-router-dom";
+import SoundPlayer from "../components/SoundPlayer";
 
 import "../Css/EndQuizPage.css";
 
@@ -12,6 +13,10 @@ export default function EndQuizPage() {
   const history = useHistory();
   const score = useSelector(selectScore);
   const [player_name, set_player_name] = useState("");
+
+  useEffect(() => {
+    SoundPlayer("GAME_OVER");
+  }, []);
 
   function nameChangeHandler(event) {
     if (player_name.length < 3) {
@@ -38,7 +43,9 @@ export default function EndQuizPage() {
         value={player_name}
         onChange={(event) => nameChangeHandler(event)}
       />
-      <button className="Button-End-Quiz" onClick={submitScore}>Submit</button>
+      <button className="Button-End-Quiz" onClick={submitScore}>
+        Submit
+      </button>
     </div>
   );
 }

@@ -5,12 +5,19 @@ import { Link } from "react-router-dom";
 import { selectAllHighscores } from "../store/highscores/selectors";
 import { fetchHighscores } from "../store/highscores/actions";
 
+import SoundPlayer from "../components/SoundPlayer";
+
 import "../Css/HomePage.css";
 
 export default function HomePage() {
   const dispatch = useDispatch();
   const highscore = useSelector(selectAllHighscores);
   const [highscores, setHighScores] = useState([]);
+
+  useEffect(() => {
+    SoundPlayer("HOMEPAGE");
+  }, []);
+
   useEffect(() => {
     dispatch(fetchHighscores());
   }, [dispatch]);

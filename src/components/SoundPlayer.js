@@ -1,6 +1,7 @@
 import correctAnswerSound from "../assets/audio/success.wav";
 import wrongAnswerSound from "../assets/audio/wrong.wav";
 import gameOverSound from "../assets/audio/gameover.wav";
+import homePage from "../assets/audio/homepage.mp3";
 
 export default function SoundPlayer(status) {
   switch (status) {
@@ -14,6 +15,10 @@ export default function SoundPlayer(status) {
     }
     case "GAME_OVER": {
       new Audio(gameOverSound).play();
+      break;
+    }
+    case "HOMEPAGE": {
+      new Audio(homePage).play();
       break;
     }
     default: {
