@@ -13,7 +13,7 @@ export const fetchHighscores = () => {
     try {
       const response = await axios.get(`${apiUrl}/highscore`);
 
-      console.log("response.data", response.data);
+      // console.log("response.data", response.data);
       dispatch(fetchHighscoresSuccess(response.data));
     } catch (error) {
       if (error.response) {
@@ -28,12 +28,12 @@ export const fetchHighscores = () => {
 export const newHighscore = (player_name, score) => {
   return async (dispatch, getState) => {
     try {
-      const response = await axios.post(`${apiUrl}/highscore`, {
+      await axios.post(`${apiUrl}/highscore`, {
         player_name,
         score,
       });
 
-      console.log("response.data", response.data);
+      // console.log("response.data", response.data);
       // dispatch(fetchHighscores());
     } catch (error) {
       if (error.response) {

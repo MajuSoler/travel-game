@@ -1,4 +1,4 @@
-import React, { useState, useEffect, PureComponent } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { newQuestion } from "../store/questions/actions";

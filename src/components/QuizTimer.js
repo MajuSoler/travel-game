@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { setScore } from "../store/gameState/actions";
 import "../Css/QuizPage.css";
 
-
 export default function QuizTimer() {
   const [gameTime, set_gameTime] = useState(0);
   const [startGame, set_startGame] = useState(false);
@@ -15,7 +14,7 @@ export default function QuizTimer() {
     set_gameTime(30);
     set_startGame(true);
     dispatch(setScore(0));
-    console.log("Game started!");
+    // console.log("Game started!");
   }
 
   useEffect(() => {

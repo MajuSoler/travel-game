@@ -13,7 +13,7 @@ export const fetchQuestions = () => {
     try {
       const response = await axios.get(`${apiUrl}/question`);
 
-      console.log("response.data", response.data);
+      // console.log("response.data", response.data);
       dispatch(fetchQuestionsSuccess(response.data));
     } catch (error) {
       if (error.response) {
@@ -36,7 +36,7 @@ export const newQuestion = (
 ) => {
   return async (dispatch, getState) => {
     try {
-      const response = await axios.post(`${apiUrl}/question`, {
+      await axios.post(`${apiUrl}/question`, {
         answer_1,
         answer_2,
         answer_3,
@@ -46,7 +46,7 @@ export const newQuestion = (
         img_url,
       });
 
-      console.log("response.data", response.data);
+      // console.log("response.data", response.data);
     } catch (error) {
       if (error.response) {
         console.log(error.response.data.message);

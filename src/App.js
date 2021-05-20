@@ -9,7 +9,7 @@ import QuizPage from "./pages/QuizPage";
 import EndQuizPage from "./pages/EndQuizPage";
 import AddQuestionPage from "./pages/AddQuestionPage";
 import TestPage from "./pages/TestPage";
-import NavBar from "./components/NavBar";
+// import NavBar from "./components/NavBar";
 
 function App() {
   return (
