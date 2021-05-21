@@ -7,14 +7,14 @@ Can you find it?
 
 Feel free to clone this public repository and if you have any questions, contact any of its creators.
 
-Ariel Shadmon - github.com/finerio
-Maria Julia Soler - github.com/MajuSoler
-Patrick Oves Weiss - github.com/powsitu
+Ariel Shadmon - github.com/finerio <br>
+Maria Julia Soler - github.com/MajuSoler <br>
+Patrick Oves Weiss - github.com/powsitu <br>
 
-We also have a backend for this project that can be acessed here:
+We also have a backend for this project that can be acessed here: <br>
 https://github.com/MajuSoler/travel-game_backend
 
-Deplyoment:
+Deplyoment: <br>
 https://travelgame.netlify.app/
 
 <img src="src/images/homepage.png">
