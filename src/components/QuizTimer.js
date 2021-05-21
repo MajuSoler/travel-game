@@ -30,6 +30,7 @@ export default function QuizTimer() {
     }
     if (gameTime === 0 && startGame) {
       set_startGame(false);
+      clearTimeout();
       history.push("/end-quiz");
     }
   }, [gameTime, startGame, history]);

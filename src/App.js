@@ -10,12 +10,13 @@ import EndQuizPage from "./pages/EndQuizPage";
 import AddQuestionPage from "./pages/AddQuestionPage";
 import TestPage from "./pages/TestPage";
 // import NavBar from "./components/NavBar";
+import MusicToggler from "./components/MusicToggler";
 
 function App() {
   return (
     <div>
       {/* <NavBar /> */}
-
+      <MusicToggler />
       <Switch>
         <Route path="/highscores" component={HighscoresPage} />
         <Route path="/quiz" component={QuizPage} />

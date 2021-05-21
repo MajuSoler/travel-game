@@ -1,15 +1,9 @@
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-
-import SoundPlayer from "../components/SoundPlayer";
-
 import "../Css/HomePage.css";
 
 export default function HomePage() {
-  useEffect(() => {
-    SoundPlayer("HOMEPAGE");
-  }, []);
-
   return (
     <div id="image">
       <div id="top">
