@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&family=Yellowtail&display=swap");
+
+.radioselector {
+  padding: 10px;
+  margin: 10px;
+}
+
+.QuestionPage {
+  text-align: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background: repeating-linear-gradient(
+      pink 2px,
+      transparent 3px,
+      transparent 30px
+    ),
+    repeating-linear-gradient(
+        90deg,
+        pink 2px,
+        transparent 3px,
+        transparent 40px
+      )
+      10px 0;
+  filter: drop-shadow(0 0 1px magenta) drop-shadow(0 0 3px magenta)
+    drop-shadow(0 0 7px cyan);
+  animation: move 10s linear infinite;
+  align-items: center;
+  align-content: center;
+
+  position: relative;
+}
+.testin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.containerForFutureImage {
+  display: flex;
+  justify-content: center;
+}
+
+.previewContainer {
+  width: 640px;
+  height: 320px;
+  border: solid 2px black;
+}
+
+.contentBox {
+  display: flex;
+  width: 640px;
+  height: 320px;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputFields {
+  background-color: #dda0dd;
+  display: inline-block;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid black;
+  padding: 15px;
+  font-size: 1em;
+  font-family: "Russo One", sans-serif;
+}
+.prviewImage {
+  margin-top: 12px;
+  border: solid black 2px;
+  width: 640px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.New-question-Button {
+  border-radius: 5px;
+  background: purple;
+  border: 2px solid black;
+  padding: 20px;
+  font-size: 1em;
+  margin: 3px;
+  font-family: "Russo One", sans-serif;
+  margin: 16px;
+}
+
+.sucess-message {
+  padding: 20px;
+  font-size: 1em;
+  margin: 3px;
+  font-family: "Russo One", sans-serif;
+  margin: 16px;
+}
+
+.testing {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  height: 25px;
+}
+
+.option {
+  display: flex;
+  padding: 10px;
+  width: 100px;
+  color: "red";
+  font-family: "Russo One", sans-serif;
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+.inputFields {
+  padding: 10px;
+  margin: 5px;
+  width: 200px;
+  height: 25px;
+}

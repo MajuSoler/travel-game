@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&family=Yellowtail&display=swap");
+
+.quiz-playerInput {
+  background-color: #dda0dd;
+  display: inline-block;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 1em;
+  font-family: "Russo One", sans-serif;
+}
+
+.Button-End-Quiz {
+  display: inline-block;
+  border-radius: 5px;
+  background: purple;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 1em;
+  margin-top: 10px;
+  font-family: "Russo One", sans-serif;
+}
