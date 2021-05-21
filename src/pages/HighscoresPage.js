@@ -23,8 +23,8 @@ export default function HighscoresPage() {
         <Link to="/">
           <h2 className="Title">World Quiz!</h2>
         </Link>
-        <div className="scrolling">
-          {highscores.map((score, index) => (
+        <div>
+          {highscores.slice(0, 5).map((score, index) => (
             <ul key={index}>
               <h1 className="high-scores">
                 {score.player_name} - {score.score}

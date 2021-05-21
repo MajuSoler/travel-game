@@ -37,9 +37,6 @@
   place-items: center;
   justify-content: center;
 }
-.scrolling {
-  overflow: scroll;
-}
 
 .Title {
   margin-top: 50px;
