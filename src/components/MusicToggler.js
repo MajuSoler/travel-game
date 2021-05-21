@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import musicIcon from "../assets/icon/music.png";
 import { useDispatch, useSelector } from "react-redux";
 import { selectMusicPlaying } from "../store/gameState/selectors";
@@ -8,7 +8,7 @@ import musicTrack from "../assets/audio/homepage.mp3";
 export default function MusicToggler() {
   const dispatch = useDispatch();
   const musicPlaying = useSelector(selectMusicPlaying);
-  const audio = new Audio(musicTrack);
+  const audio = useRef(new Audio(musicTrack));
 
   const toggler = () => {
     dispatch(toggleMusic(!musicPlaying));
@@ -16,9 +16,9 @@ export default function MusicToggler() {
 
   useEffect(() => {
     if (musicPlaying) {
-      audio.play();
+      audio.current.play();
     } else {
-      audio.pause();
+      audio.current.pause();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [musicPlaying]);
